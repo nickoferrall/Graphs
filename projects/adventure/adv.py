@@ -92,19 +92,19 @@ while len(visited) < len(roomGraph):
 
 
 # TRAVERSAL TEST
-visited_visited = set()
+rooms_visited = set()
 player.currentRoom = world.startingRoom
-visited_visited.add(player.currentRoom)
+rooms_visited.add(player.currentRoom)
 for move in traversalPath:
     player.travel(move)
-    visited_visited.add(player.currentRoom)
+    rooms_visited.add(player.currentRoom)
 
-if len(visited_visited) == len(roomGraph):
+if len(rooms_visited) == len(roomGraph):
     print(
-        f"TESTS PASSED: {len(traversalPath)} moves, {len(visited_visited)} visited visited")
+        f"TESTS PASSED: {len(traversalPath)} moves, {len(rooms_visited)} rooms visited")
 else:
     print("TESTS FAILED: INCOMPLETE TRAVERSAL")
-    print(f"{len(roomGraph) - len(visited_visited)} unvisited visited")
+    print(f"{len(roomGraph) - len(rooms_visited)} unvisited visited")
 
 
 #######
